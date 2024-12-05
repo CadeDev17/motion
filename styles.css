@@ -1,0 +1,182 @@
+/* Reset margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Full-Screen Background */
+  html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: radial-gradient(circle, rgba(0, 0, 0, 1) 60%, rgba(30, 30, 30, 1) 100%);
+    font-family:"Asset", serif;
+    cursor: none; /* Hide default cursor */
+    position: relative;
+  }
+  
+  /* Scattered Navigation Items */
+  .scattered-nav {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .nav-links {
+    position: relative;
+    list-style: none;
+    height: 100%; /* Make the parent take up the full screen */
+    width: 100%;
+  }
+  
+  .nav-links li {
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+  
+  .nav-links li:nth-child(1) {
+    top: 20%;
+    left: 35%;
+  }
+  
+  .nav-links li:nth-child(2) {
+    top: 35%;
+    left: 50%;
+  }
+  
+  .nav-links li:nth-child(3) {
+    top: 80%;
+    left: 50%;
+  }
+  
+  .nav-links li:nth-child(4) {
+    top: 30%;
+    left: 70%;
+  }
+  
+  .nav-links li:nth-child(5) {
+    top: 60%;
+    left: 75%;
+  }
+  
+  .nav-links li:nth-child(6) {
+    top: 70%;
+    left: 20%;
+  }
+  
+  .nav-links li a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  }
+  
+  /* Animated Title */
+  .motion-title {
+    font-size: 4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    position: absolute;
+    letter-spacing: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  
+    /* Create a glowing gradient */
+    background: linear-gradient(
+      to right,
+      rgba(0, 255, 26, 0.2),
+      rgba(255, 255, 255, 0.9),
+      rgba(0, 255, 26, 0.2)
+    );
+    background-size: 500% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    /* Apply the left-to-right animation */
+    animation: leftToRightGlow 10s linear infinite;
+  }
+  
+  /* Glow Animation */
+  @keyframes leftToRightGlow {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+  
+  /* Custom Cursor */
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: lighten;
+  }
+
+  .under-glow {
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    transition: box-shadow 0.3s ease;
+  }
+
+  /* Adjust for Mobile (iPhone 12 Pro dimensions) */
+  @media (max-width: 390px) {
+    .nav-links li:nth-child(1) {
+      top: 25%;
+      left: 25%;
+    }
+  
+    .nav-links li:nth-child(2) {
+      top: 40%;
+      left: 25%;
+    }
+  
+    .nav-links li:nth-child(3) {
+      visibility: hidden;
+    }
+  
+    .nav-links li:nth-child(4) {
+      top: 35%;
+      left: 75%;
+    }
+  
+    .nav-links li:nth-child(5) {
+      top: 65%;
+      left: 80%;
+      width: 150px;
+    }
+  
+    .nav-links li:nth-child(6) {
+      top: 75%;
+      left: 25%;
+    }
+  
+    .nav-links li a {
+      font-size: 1rem; /* Reduce font size for smaller screens */
+      padding: 5px 10px;
+    }
+  
+    .motion-title {
+      font-size: 2.5rem; /* Adjust title size for mobile */
+    }
+  }

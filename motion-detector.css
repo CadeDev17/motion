@@ -1,0 +1,126 @@
+/* Full-Screen Background */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle, rgba(0, 0, 0, 1) 60%, rgba(30, 30, 30, 1) 100%);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Motion Container */
+  .motion-container {
+    text-align: center;
+    color: white;
+  }
+  
+  .motion-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    position: absolute;
+    letter-spacing: 5px;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  
+    /* Create a glowing gradient */
+    background: linear-gradient(
+      to left,
+      rgba(0, 255, 26, 0.2),
+      rgba(255, 255, 255, 0.9),
+      rgba(0, 255, 26, 0.2)
+    );
+    background-size: 400% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  
+    /* Apply the left-to-right animation */
+    animation: rightToLeftGlow 10s linear infinite;
+  }
+  
+  /* Glow Animation */
+  @keyframes rightToLeftGlow {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
+  /* Pill Container */
+  .pill-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 10rem
+  }
+  
+  .pill {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.pill img {
+    width: 150px;
+    height: auto;
+    max-width: 150px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+  
+  .pill img:hover {
+    transform: scale(1.1);
+  }
+  
+  .pill p {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  /* Full-Screen Overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    z-index: 9999; /* Ensure it stays on top of all content */
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .overlay p {
+    margin: 0;
+    animation: fadeInOut 3s infinite; /* Subtle fade-in-out animation */
+  }
+  
+  /* Fade In-Out Animation */
+  @keyframes fadeInOut {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  
